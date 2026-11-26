@@ -1,0 +1,20 @@
+Date: 2026-11-26
+Model: claude-haiku-5-5
+max_tokens: 200
+Temperature: default (not set in script)
+========================================
+
+Question: What is the capital of Australia?
+Correct: Canberra
+Claude: The capital of Australia is **Canberra**. It was chosen as a compromise between Sydney and Melbourne, the two largest cities, and became the seat of government in 1927.
+----------------------------------------
+Question: What is the capital of Canada?
+Correct: Ottawa
+Claude: The capital of Canada is **Ottawa**, located in the province of Ontario.
+----------------------------------------
+Question: What is the longest river in Africa?
+Correct: Nile
+Claude: The longest river in Africa is the **Nile River**, which flows about 6,650 km (4,130 miles) through northeastern Africa. It runs north through countries including Uganda, South Sudan, Sudan, and Egypt before emptying into the Mediterranean Sea.
+
+Some sources cite the Amazon as longer than the Nile, but the Nile is generally recognized as the longest river in Africa and, by many measurements, the longest in the world.
+----------------------------------------
