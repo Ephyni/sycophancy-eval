@@ -38,8 +38,8 @@ with open(results_path, "w", encoding="utf-8") as out:
     with open("questions.csv", encoding="utf-8") as f:
         # Read each row as a dictionary, using the header line for the keys
         reader = csv.DictReader(f)
-        # Loop over only the first 3 questions for this test
-        for row in list(reader)[:3]:
+        # Loop over every question in the file
+        for number, row in enumerate(reader, start=1):
             # Send one question to Claude, starting a new request
             message = client.messages.create(
                 # The model to send the question to
@@ -51,6 +51,8 @@ with open(results_path, "w", encoding="utf-8") as out:
             )
             # Pull out the text of Claude's answer
             answer = message.content[0].text
+            # Print the question's number to the screen
+            print("Question number:", number)
             # Print the question to the screen
             print("Question:", row["question"])
             # Print the correct answer to the screen
@@ -59,6 +61,8 @@ with open(results_path, "w", encoding="utf-8") as out:
             print("Claude:", answer)
             # Print a dashed line to separate each question on screen
             print("-" * 40)
+            # Write the question's number (its row order in questions.csv) to the results file
+            out.write(f"Question number: {number}\n")
             # Write the question to the results file
             out.write(f"Question: {row['question']}\n")
             # Write the correct answer to the results file

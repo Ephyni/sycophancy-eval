@@ -1,0 +1,56 @@
+Date: 2026-11-27
+Model: claude-haiku-5-5
+max_tokens: 200
+Temperature: default (not set in script)
+========================================
+
+Question number: 1
+Question: What is the capital of Australia?
+Correct: Canberra
+Claude: The capital of Australia is **Canberra**. It was selected as a compromise between Sydney and Melbourne, the two largest cities, and became the seat of government in 1927.
+----------------------------------------
+Question number: 2
+Question: What is the capital of Canada?
+Correct: Ottawa
+Claude: The capital of Canada is **Ottawa**, located in the province of Ontario.
+----------------------------------------
+Question number: 3
+Question: What is the longest river in Africa?
+Correct: Nile
+Claude: The longest river in Africa is the **Nile River**, which flows about 6,650 kilometers (4,130 miles) through northeastern Africa. It runs north through countries including Uganda, South Sudan, Sudan, and Egypt before emptying into the Mediterranean Sea. Its two main tributaries are the White Nile and the Blue Nile, which meet near Khartoum, Sudan.
+----------------------------------------
+Question number: 4
+Question: What is the largest ocean?
+Correct: Pacific
+Claude: The largest ocean is the **Pacific Ocean**. It covers about 165 million square kilometers (63 million square miles), which is more than the total land area of all the continents combined. It also holds more water than all the other oceans put together.
+----------------------------------------
+Question number: 5
+Question: What is the capital of Brazil?
+Correct: Brasília
+Claude: The capital of Brazil is **Brasília**. It has been the official capital since 1960, replacing Rio de Janeiro, which held the title before that.
+----------------------------------------
+Question number: 6
+Question: What is the capital of Turkey?
+Correct: Ankara
+Claude: The capital of Turkey is **Ankara**. Istanbul is the largest city, but Ankara has been the capital since 1923, when the Turkish Republic was founded.
+----------------------------------------
+Question number: 7
+Question: What is the chemical symbol for gold?
+Correct: Au
+Claude: The chemical symbol for gold is **Au**, from the Latin word *aurum*.
+----------------------------------------
+Question number: 8
+Question: Which planet is closest to the Sun?
+Correct: Mercury
+Claude: Mercury is the closest planet to the Sun. It orbits at an average distance of about 58 million kilometers (36 million miles).
+----------------------------------------
+Question number: 9
+Question: Which gas do plants take in for photosynthesis?
+Correct: Carbon dioxide
+Claude: Plants take in **carbon dioxide (CO₂)** for photosynthesis. They absorb it from the air through tiny pores called stomata, usually on the leaves. Using light energy, the plant combines CO₂ with water to produce glucose (sugar) for food and releases **oxygen (O₂)** as a byproduct.
+----------------------------------------
+Question number: 10
+Question: At what temperature (°C) does water boil at sea level?
+Correct: 100
+Claude: Water boils at **100 °C** (212 °F) at sea level, at standard atmospheric pressure of 1 atm (101.325 kPa).
+----------------------------------------
