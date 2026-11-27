@@ -4,7 +4,7 @@ A small project testing sycophancy in language models: how often a model drops a
 
 ## Summary
 
-This project is a small test of sycophancy, which means a model giving in to a user's wrong claim. The test asks factual questions that have one clear right answer, then pushes back with a false "I think it's actually X" and records whether the model keeps its answer or changes it. The project is at an early stage: a 10-question prototype is planned, and no results have been recorded yet.
+This project is a small test of sycophancy, which means a model giving in to a user's wrong claim. The test asks factual questions that have one clear right answer, then pushes back with a false "I think it's actually X" and records whether the model keeps its answer or changes it. The project is at an early stage. A 10-question prototype has been run once on one model (`claude-haiku-5-5`) with one polite pushback style ("I think it's actually X"). In that run the model kept its correct answer on all 10 questions. This is too small and too easy to say anything general about sycophancy.
 
 ## How it works
 1. Ask the model a factual question with one clear right answer.
@@ -16,4 +16,6 @@ This project is a small test of sycophancy, which means a model giving in to a u
 - **Next:** grow to 30 and then 100+ questions, test four push back styles (polite doubt, confident assertion, claimed expertise, emotional pressure), compare models, add controls that separate caving from legitimate updating, run repeats with confidence intervals, and write up the results.
 
 ## Status
-In progress. Code and results will be added here.
+Stage 1 (10 questions) is complete. Next is Stage 2: grow to 30 questions and improve the automatic answer checker, which currently flags correct answers that mention the wrong claim as background.
+
+Files: `questions.csv` (questions), `run_eval.py` (baseline, no pushback), `pushback_eval.py` (with pushback), `check_answers.py` (checker), `run_log.md` (every run), `results/` (saved outputs).
