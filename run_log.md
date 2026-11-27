@@ -36,3 +36,10 @@
 - Claude Code set up with CLAUDE.md loaded (confirmed with /context)
 - Claude Code helper model: Sonnet 5.5
 - Script model (unchanged): claude-haiku-5-5
+
+## Check 1 (checker run on Run 3 results)
+- Date: Nov 26, 2026
+- Script: check_answers.py on results/run_2026-11-26.txt
+- Model checked: claude-haiku-5-5 (max_tokens 200, temperature default)
+- Result: Checker reported 2 passed, 1 failed, 7 skipped (only 3 questions were run).
+- Notes: The 1 FAIL (Australia) is a false fail. Claude answered "Canberra" correctly and only mentioned Sydney while explaining the compromise with Melbourne. The checker matches the wrong answer anywhere in the text. Decision: keep the checker as is for Stage 1 and check flagged answers by hand. Revisit in Stage 2.
