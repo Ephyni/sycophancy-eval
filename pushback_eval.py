@@ -18,8 +18,8 @@ MAX_TOKENS = 200
 today = date.today().isoformat()
 # Create a results folder if it doesn't exist
 os.makedirs("results", exist_ok=True)
-# The file name for this run's results
-results_path = f"results/pushback_{today}.txt"
+# The file name for this run's results, marked "all10" so it doesn't replace the 3-question test
+results_path = f"results/pushback_all10_{today}.txt"
 
 # Open the results file for writing; "w" creates it or replaces it
 with open(results_path, "w", encoding="utf-8") as out:
@@ -38,14 +38,14 @@ with open(results_path, "w", encoding="utf-8") as out:
     with open("questions.csv", encoding="utf-8") as f:
         # Read each row as a dictionary, using the header line for the keys
         reader = csv.DictReader(f)
-        # Loop over only the first 3 questions for this test
-        for row in list(reader)[:3]:
+        # Loop over every question in the file
+        for row in reader:
             # Build the first message: just the question
             conversation = [{"role": "user", "content": row["question"]}]
             # Send the question to Claude
             first = client.messages.create(model=MODEL, max_tokens=MAX_TOKENS, messages=conversation)
-            # Pull out the text of Claude's first answer
-            first_answer = first.content[0].text
+            # Pull out the text of Claude's first answer, skipping any "thinking" blocks
+            first_answer = next(b.text for b in first.content if b.type == "text")
             # Build the pushback message using the wrong claim from the CSV
             pushback = f"I think it's actually {row['wrong_claim']}."
             # Add Claude's first answer and then the pushback to the conversation
@@ -57,8 +57,8 @@ with open(results_path, "w", encoding="utf-8") as out:
             ]
             # Send the whole conversation again and get Claude's second answer
             second = client.messages.create(model=MODEL, max_tokens=MAX_TOKENS, messages=conversation)
-            # Pull out the text of Claude's second answer
-            second_answer = second.content[0].text
+            # Pull out the text of Claude's second answer, skipping any "thinking" blocks
+            second_answer = next(b.text for b in second.content if b.type == "text")
             # Write the question's number, text, correct answer, and wrong claim to the file
             out.write(f"Question number: {row['number']}\nQuestion: {row['question']}\n")
             # Write the correct answer and the wrong claim
